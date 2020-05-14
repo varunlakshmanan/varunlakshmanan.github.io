@@ -1,0 +1,628 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Varun Lakshmanan</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(255, 255, 255);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body style="background-color:2F3437;"><article id="11c4ae73-8622-414e-a244-ccd831d0a71a" class="page sans"><header><h1 class="page-title">Varun Lakshmanan</h1></header><div class="page-body"><div id="23558ac0-7c1f-460a-8e23-b31d8ccf5cb7" class="column-list"><div id="369ccba9-be85-4d7c-b837-b5d654fe23d8" style="width:50%" class="column"><figure id="5d7da57a-5aff-4391-92ec-6bd10edd30a8" class="image"><a href="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/bafcf89e-979e-4205-b568-6985dec176c3/Portrait.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200514%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200514T213815Z&X-Amz-Expires=86400&X-Amz-Signature=64068286e4102ca308bac69dcecbc092bfaedfc4ad61af45adeeb32800e0f55f&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Portrait.jpg%22"><img style="width:480px" src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/bafcf89e-979e-4205-b568-6985dec176c3/Portrait.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200514%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200514T213815Z&X-Amz-Expires=86400&X-Amz-Signature=64068286e4102ca308bac69dcecbc092bfaedfc4ad61af45adeeb32800e0f55f&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Portrait.jpg%22"/></a></figure></div><div id="0a9aa4a4-5e86-4eef-9698-8725f375cbc1" style="width:50%" class="column"><h1 id="7ce00f9c-2bcb-47e7-bb58-bf86d78a1252" class="">Who I am</h1><p id="fe2ffbf9-cc6f-4514-b75d-aa7e27ab0815" class="">Hey! I&#x27;m Varun, a sophomore studying computer science at Georgia Tech. I&#x27;m a machine learning enthusiast interested in entrepreneurship and passionate about applying AI to solve real-world problems. In my free time, I compete in hackathons and work on personal projects, some of which have been internationally recognized. </p><p id="9dc03864-cf4d-4241-a8af-63c1682f2493" class="">Technologies that I work with include <mark class="highlight-red">Python</mark>,<mark class="highlight-red"> Java</mark>,<mark class="highlight-red"> C++</mark>,<mark class="highlight-red"> Swift</mark>,<mark class="highlight-red"> MATLAB</mark>,<mark class="highlight-red"> TensorFlow</mark>,<mark class="highlight-red"> Keras</mark>,<mark class="highlight-red"> Scikit-learn</mark>,<mark class="highlight-red"> </mark>and <mark class="highlight-red">OpenCV</mark>. </p><p id="69c18d30-2a86-4c1a-a1ec-acf30c06a3ec" class="">
+</p></div></div><hr id="0d8ac540-c506-4ce6-ba81-4ece8812d701"/><h1 id="ed2f44ce-4048-4b05-90f8-c1a656ebd7eb" class="">What I&#x27;ve done ✅</h1><h2 id="63fb09c1-7448-406b-a8cb-80cce3cd7689" class="">Experiences </h2><h3 id="3eaaef12-fff3-42c0-8647-194fc10266a9" class="">Software Engineering Intern, Amazon </h3><p id="9e483e10-7349-4bf7-a63c-3345857c72a8" class=""><em>May 2020 - Ongoing</em></p><p id="c9114196-f146-4b43-9a94-a2e93f5aa025" class="">This summer, I&#x27;ll be interning at Amazon as 1 of only 100 college students to be recognized as an Amazon Future Engineer in the country.</p><h3 id="64c12fab-7a23-4311-917c-edf28886cd99" class=""><a href="https://www.scripps.edu/tomchik/members.html">Research Intern, Scripps Research Institute</a></h3><p id="abea1e22-f7c5-4ad5-8f0a-d72badc29a6f" class=""><em>June 2018 - August 2018, June 2019 - August 2019</em></p><p id="8a776c1a-e6f1-4167-8689-a765fa378dc3" class="">I interned two years at the Tomchik Neuroscience Lab at the Scripps Research Institute in Jupiter, FL. In my time there, I </p><ul id="86ed2e9c-3089-4895-b113-edf98374c581" class="bulleted-list"><li>Deployed a <mark class="highlight-red">computer vision</mark> system built in <mark class="highlight-red">Python </mark>and <mark class="highlight-red">MATLAB</mark> that could automatically classify different types of behaviors in fruit flies based on videos of fruit fly movement</li></ul><ul id="76f70d8e-7d23-4dd7-a0c7-c45e24431b1e" class="bulleted-list"><li>Standardized the use of a <mark class="highlight-red">MATLAB toolbox</mark> to resolve errors in the computer vision system</li></ul><ul id="142a726e-2485-451c-b914-dc9cfddef52c" class="bulleted-list"><li>Developed an automated pipeline to create dynamic 3D visualizations of fly movement data by processing images in a program built in <mark class="highlight-red">Java</mark>, preprocessing numerical data in <mark class="highlight-red">VBA</mark>, and creating the 3D plot in <mark class="highlight-red">MATLAB</mark></li></ul><h2 id="3fd9eed0-52ec-432d-bcec-b81c61c9bf18" class="">Projects</h2><h3 id="77a408d5-d692-4925-aa0f-7f0f3456ec81" class=""><a href="https://github.com/varunlakshmanan/covid19-survival-calculator">COVID-19 Survival Calculator</a></h3><p id="f51fcd55-3f7b-45ee-9f62-5a92d7de04ea" class=""><em>March 2020 </em></p><p id="2dda5d2b-e248-4028-adec-8e04ac67d493" class="">As part of a team in the COVID-19 Global Hackathon, I built a calculator that can estimate a COVID-19 patient&#x27;s chance of survival based on about 10 inputs (gender, age, days before hospitalization, preexisting medical conditions, location, etc). I specifically helped preprocess our dataset, and trained an <mark class="highlight-red">XGBoost </mark>model and <mark class="highlight-red">LightGBM </mark>model on the data. I optimized the hyperparameters in both models and integrated them in a weighted model ensemble to maximize accuracy, which exceeded 95%. I used <mark class="highlight-red">Python </mark>for this project. </p><h3 id="5f33bade-4d1c-4b19-82f4-4547b736f76e" class=""><a href="https://abstracts.societyforscience.org/Home/FullAbstract?Category=Any%20Category&amp;Finalist=lakshmanan&amp;AllAbstracts=False&amp;FairCountry=Any%20Country&amp;FairState=Any%20State&amp;ProjectId=16416">Diagnosis of Cardiovascular, Renal, and Skin Diseases through a Computer Vision Model Ensemble in an iOS Application</a> </h3><p id="66646643-4b59-433f-9a3e-f29d27eef248" class=""><em>August 2017 - March 2019</em> </p><p id="b0441b2e-cbf9-4f52-8abe-ce06955cfcad" class="">Over two years, I built and refined an iOS application that diagnosed serious heart, kidney, skin, and liver conditions based on a picture of your fingernails.  I performed data augmentation to increase my dataset&#x27;s size, then center-cropped and preprocessed the images using <mark class="highlight-red">OpenCV </mark>functions. I built a convolutional neural network using <mark class="highlight-red">Keras </mark>and ensembled it with several classifiers from the <mark class="highlight-red">Turi Create </mark>framework. The model ensemble was integrated in an iOS application with a cohesive interface built using <mark class="highlight-red">Swift</mark>. </p><p id="6a6a042c-3805-44e4-855c-d7dadf8d026b" class="">I used <mark class="highlight-red">Swift</mark>,<mark class="highlight-red"> Python</mark>,<mark class="highlight-red"> OpenCV, TensorFlow</mark>,<mark class="highlight-red"> Keras, </mark>and<mark class="highlight-red"> Turi Create </mark>for this project. For my work on this project, I was recognized by the <a href="https://abstracts.societyforscience.org/Home/FullAbstract?Category=Any%20Category&amp;Finalist=lakshmanan&amp;AllAbstracts=False&amp;FairCountry=Any%20Country&amp;FairState=Any%20State&amp;ProjectId=16416">International Science and Engineering Fair</a> (Special Award from GoDaddy), <a href="https://www.sigmobile.org/mobicom/2017/app.php">ACM MobiCom</a> (2nd in App Contest), <a href="https://www.sigmaxi.org/news/news-archive/2018/05/15/2018-student-research-showcase-results">Sigma Xi</a> (1st in Computer Science Section), and the National Junior Science and Humanities Symposium (National Finalist and 1st in Florida). </p><p id="3e3869b5-abc0-42be-9ff1-8141e90ee822" class="">
+</p><hr id="679efba5-0ea2-4488-abb9-c848e3ce76c5"/><h1 id="ffe6dd47-b289-4191-a473-a68d19dab759" class="">What I&#x27;m working on 🛠</h1><p id="b4bc8042-9ab2-4606-a011-8961d476619c" class="">I&#x27;m slated to start my Amazon internship in the next few weeks. In the meantime, I&#x27;m working on <a href="https://github.com/varunlakshmanan/glass">Glass</a>, a Python framework that simplifies the process of building machine learning models for numerical data using Sci-kit learn. When finished, given a dataset, the framework will automatically initialize a variety of classifiers/regressors with different architectures (Random Forest, SVM, XGBoost, etc), optimize all of their hyperparameters, and rank all of the models based on their accuracy against the dataset. The most accurate models will automatically be combined in an optimized model ensemble.</p><p id="fbecae09-99fa-4e41-bc40-63d8f0df06fd" class="">
+</p><hr id="048b65f5-2cec-4047-9b9d-ecf5a6a08e62"/><h1 id="5fda72ef-fd92-4bb5-9c08-09d133104625" class="">Contact me 📧</h1><p id="49aa36af-11b6-4d66-9254-8931830b4601" class="">I&#x27;m always excited to explore new topics and work on new projects. Feel free to get in touch. </p><div id="01ecc625-627a-4b03-8ef8-92fefac18f5f" class="column-list"><div id="16a34bdd-9d85-49b4-bfd8-45c0d1a66510" style="width:15.625%" class="column"><p id="a62692d0-4c70-4767-87cb-28b622c60106" class=""><mark class="highlight-red"><a href="https://www.linkedin.com/in/varun-lakshmanan-ba657a191">LinkedIn</a></mark></p></div><div id="394188df-7749-4678-86fb-995bc341d01a" style="width:18.75%" class="column"><p id="eac092b4-74ab-41c3-b16e-f5d86c8b20a2" class=""><mark class="highlight-red"><a href="https://github.com/varunlakshmanan">GitHub</a></mark></p><p id="1b901b71-32a8-4ba4-8472-aa1b2f3b20d0" class="">
+</p></div><div id="9739562b-2b5e-4af4-8cab-7148553e1d33" style="width:40.625%" class="column"><p id="4c6b5d80-713d-4a02-abc5-8066fc822afd" class=""><mark class="highlight-red"><a href="mailto:vlakshmanan30@gatech.edu">vlakshmanan30@gatech.edu</a></mark></p><p id="c048b716-5753-43f6-bfc1-81a37eb852b6" class="">
+</p></div><div id="06875b64-6c5b-4ea8-9e54-5f54954bea44" style="width:25.00000000000001%" class="column"><p id="9ef8fc83-baf3-4ab0-949c-7ca56125df2e" class=""><mark class="highlight-red">Résumé</mark></p><p id="27b657e1-ade5-47fd-9eec-84c1524fba06" class="">
+</p></div></div></div></article></body></html>
